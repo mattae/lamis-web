@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Module} from '../../../module/module.model';
 import {ModuleService} from '../../../module/module.service';
 import {CardViewBoolItemModel, CardViewItem, CardViewTextItemModel} from "@alfresco/adf-core";
-import {CardViewTextContentItemModel} from '@lamis/web-core';
 
 @Component({
     selector: 'lamis-module-list',
@@ -23,7 +22,7 @@ export class ModuleListComponent implements OnInit {
 
     getProperties(module: Module): Array<CardViewItem> {
         const properties = [];
-        const description = new CardViewTextContentItemModel({
+        const description = new CardViewTextItemModel({
             label: 'Description',
             value: module.description,
             key: 'desc',
